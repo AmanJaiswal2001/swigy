@@ -28,24 +28,28 @@ const Body = () => {
 
 const json=await data.json();
 console.log(json);
+
 setListOfRestrant(json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
+console.log(json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants)
 setfilter(json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
     
 }
+
 //use custom hooks
 const OnlineStatus=useOnlineStatus();
 if(OnlineStatus==false)
     return<h1>Please check a Internet connection</h1>
    //conditional render//
-   if(listOfRestaurants.length===0){
-return <Shimmar/>
-   }
-   
+
+   if(!listOfRestaurants || listOfRestaurants.length === 0){
+    return <Shimmar/>
+       }
+       
     return (
         <div>
-            <div className='flex justify-between p-4'>
-            <div className="search   space-x-5">
-                <input className=" w-96 h-8  outline  outline-gray-100 rounded-lg"
+            <div className='  sm:flex md:flex justify-between p-4'>
+            <div className0="search   space-x-5">
+                <input className=" sm:w-96 md:w-96 h-8  outline  outline-gray-100 rounded-lg"
                 type="text"
                 placeholder="Search for dishes"
                 value={search}
@@ -67,7 +71,7 @@ setfilter(filterRestarants)
                 
                 >Search</button>
             </div>
-            <button className=" outline outline-gray-100 w-48 h-8 rounded-lg" 
+            <button className=" outline outline-gray-100 w-48 h-8 rounded-lg mt-5 md:mt-0 sm:mt-0" 
             onClick={()=>{
                 const filteredList =listOfRestaurants.filter(
                     (res)=>res.info.avgRating>4.2
@@ -78,7 +82,7 @@ setfilter(filterRestarants)
             }}>
 Top Rated Restarant
             </button>
-            <input type="text" className="outline outline-gray-100 w-96 h-8 rounded-lg p-1 bg-green-200"
+            <input type="text" className="outline outline-gray-100 w-96 h-8 rounded-lg p-1 bg-green-200 hidden md:block"
           value={loggedInUser}
             onChange={(e)=>(setuserinfo(e.target.value))}
             >

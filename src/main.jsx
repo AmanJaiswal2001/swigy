@@ -12,6 +12,7 @@ import UserContext from './utils/UserContext';
 import { Provider } from 'react-redux';
 import appStore from './utils/appstore';
 import Cart from './components/Cart';
+import { Login } from './components/Login';
 
 //make a separate card and componenet //
 
@@ -76,6 +77,10 @@ children:[
         path:"/cart",
         element:<Cart/>
     
+    },
+    {
+        path:"/login",
+        element:<Login/>
     }
 ],
 errorElement:<Error/>
