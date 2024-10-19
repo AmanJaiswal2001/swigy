@@ -47,7 +47,7 @@ const categories=infoHotel?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
 
 
 
-console.log(categories);
+// console.log(categories);
   return (
 
     <div  className='text-center m-5'>

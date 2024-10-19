@@ -79,7 +79,9 @@ setfilter(filterRestarants)
 Top Rated Restarant
             </button>
             <input type="text" className="outline outline-gray-100 w-96 h-8 rounded-lg p-1 bg-green-200"
-            onChange={(e)=>(setuserinfo(e.target.value))}>
+          value={loggedInUser}
+            onChange={(e)=>(setuserinfo(e.target.value))}
+            >
 
             </input>
             {/* <h1>{loggedInUser}</h1> */}

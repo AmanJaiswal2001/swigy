@@ -7,10 +7,7 @@ const RestarantCard = (props) => {
         name,
         cuisines,
         avgRating,
-        costForTwo,
-        
-          
-        
+        costForTwo,           
     }=ResData.info;
     return (
         <div className="flex mx-10 py-5  ">

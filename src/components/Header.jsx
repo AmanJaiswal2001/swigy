@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 
 import {Link} from "react-router-dom"
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -9,6 +10,10 @@ const Header = () => {
   
   const {loggedInUser}=useContext(UserContext);
   
+//selector
+const cartItems=useSelector((store)=>store.cart.items);
+
+
     return (
         <div className='flex justify-between px-5 '>
             <div className='logo w-36 '>
@@ -17,9 +22,9 @@ const Header = () => {
             </div>
             <div className='flex items-center '>
                 <ul className="flex  space-x-5 ">
-                <li>
+                {/* <li>
                     <Link to="#">status</Link>
-                    </li>
+                    </li> */}
                     <li>
                   <Link to="/">Home</Link>  
                     </li>
@@ -29,14 +34,14 @@ const Header = () => {
                     <li>
                     <Link to="/contact">Contact Us</Link>
                     </li>
-                    <li>
-                    <Link to="/cart">Cart</Link>
+                    <li className="px-4 font-bold text-xl">
+                    <Link to="/cart">Cart-({cartItems.length}items)</Link>
                     </li>
 <button className="  rounded-lg outline outline-offset-2 w-16 outline-gray-100" onClick={()=>{
     btnName==="Login"?
     setbtnName("Logout"):setbtnName("Login")
 }}>{btnName}</button>
-  <h className="font-bold ">:{loggedInUser}</h>
+  <h1 className="font-bold ">:{loggedInUser}</h1>
                 </ul>
 
             </div>

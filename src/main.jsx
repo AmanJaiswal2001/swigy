@@ -9,7 +9,9 @@ import Error from './components/Error';
 import RestraMenu from './components/RestraMenu'
 import { createBrowserRouter, RouterProvider,Outlet} from 'react-router-dom';
 import UserContext from './utils/UserContext';
-
+import { Provider } from 'react-redux';
+import appStore from './utils/appstore';
+import Cart from './components/Cart';
 
 //make a separate card and componenet //
 
@@ -32,13 +34,14 @@ useEffect(()=>{
 
 
     return (
+        <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:userinfo,setuserinfo}}>
 <div className='app'>
         <Header />
         <Outlet />
     </div>
     </UserContext.Provider>
-    
+    </Provider>
     
     )
 }
@@ -67,6 +70,11 @@ children:[
     {
         path:"/restra/:resId",
         element:<RestraMenu/>
+    
+    },
+    {
+        path:"/cart",
+        element:<Cart/>
     
     }
 ],
