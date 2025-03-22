@@ -17,7 +17,7 @@ const ResCatgerories=({data , showItem, setShowIndex })=> {
     <div>
 
 {/* header */}
-<div className='w-6/12  bg-gray-100 shadow   p-2 m-auto'>
+<div className='md:w-6/12 bg-yellow-100 shadow   p-2 m-auto'>
     <div className='font-bold  cursor-pointer flex justify-between' onClick={handleClick}>
   <div className='mx-2'>
     {data.title}

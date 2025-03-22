@@ -79,7 +79,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 ml-48 w-1/2 bg-black text-white flex flex-col  sm:ml-96 space-x-2  space-y-3 py-5 text-xl z-10">
+       
+        <div className="absolute  top-28 text-center  p-0 w-full bg-black text-white flex flex-col sm:w-screen   py-5 text-xl ">
           <Link to="/"  className= "mx-2" onClick={toggleMenu}>
             Home
           </Link>
@@ -92,8 +93,10 @@ const Header = () => {
           <Link to="/cart" onClick={toggleMenu}>
             Cart-({cartItems.length} items)
           </Link>
+          <Link to="/login">
+          <div className="justify-center flex">
           <button
-            className="rounded-lg  w-16 outline-gray-100 "
+            className="rounded-lg flex bg-red-600 w-20 text-xl py-2 m-2 px-2 outline-gray-100 "
             onClick={() => {
               setbtnName(btnName === "Login" ? "Logout" : "Login");
               toggleMenu(); // Close the menu after login/logout
@@ -101,6 +104,8 @@ const Header = () => {
           >
             {btnName}
           </button>
+          </div>
+          </Link>
         </div>
       )}
     </div>

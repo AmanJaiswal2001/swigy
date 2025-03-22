@@ -48,8 +48,8 @@ if(OnlineStatus==false)
     return (
         <div>
             <div className='  sm:flex md:flex justify-between p-4'>
-            <div className0="search   space-x-5">
-                <input className=" sm:w-96 md:w-96 h-8  outline  outline-gray-100 rounded-lg"
+            <div className="search">
+                <input className=" sm:w-96 md:w-96 h-8 w-80 outline  bg-yellow-400 outline-yellow-200 rounded-ss-md"
                 type="text"
                 placeholder="Search for dishes"
                 value={search}
@@ -58,7 +58,7 @@ setsearch(e.target.value)
                 }}>
 
                 </input>
-                <button className="outline  outline-gray-100 w-24 h-8 rounded-lg"
+                <button className="outline mt-4 md:mt-0 sm:mt-0 outline-yellow-200 w-24 h-8 bg-yellow-400  rounded-ss-md"
                 onClick={()=>{
                     const filterRestarants=listOfRestaurants.filter((res) =>
 res.info.name.toLowerCase().includes(search.toLowerCase()));
@@ -71,7 +71,7 @@ setfilter(filterRestarants)
                 
                 >Search</button>
             </div>
-            <button className=" outline outline-gray-100 w-48 h-8 rounded-lg mt-5 md:mt-0 sm:mt-0" 
+            <button className=" outline outline-yellow-200   bg-yellow-400 w-48 h-8 rounded-lg mt-5 md:mt-0 sm:mt-0" 
             onClick={()=>{
                 const filteredList =listOfRestaurants.filter(
                     (res)=>res.info.avgRating>4.2
@@ -82,7 +82,7 @@ setfilter(filterRestarants)
             }}>
 Top Rated Restarant
             </button>
-            <input type="text" className="outline outline-gray-100 w-96 h-8 rounded-lg p-1 bg-green-200 hidden md:block"
+            <input type="text" className="outline w-96 h-8 rounded-lg p-1 outline-yellow-200   bg-yellow-400  hidden sm:hidden md:block"
           value={loggedInUser}
             onChange={(e)=>(setuserinfo(e.target.value))}
             >
@@ -90,7 +90,7 @@ Top Rated Restarant
             </input>
             {/* <h1>{loggedInUser}</h1> */}
             </div>
-            <div className='flex flex-wrap'>
+            <div className=' flex flex-wrap sm:flex md:justify-between sm:justify-between justify-center   md:flex'>
                 {filter.map((restaurant)=>(
 <Link 
 key={restaurant.info.id} 
@@ -101,8 +101,13 @@ to={"/restra/"+restaurant.info.id}>
 
 
 <RestarantCardPromoted ResData={restaurant}/>):
+
 (
-<RestarantCard  ResData={restaurant} />)}
+<RestarantCard  ResData={restaurant} />
+
+)
+
+}
  </Link>
                 ))}
           

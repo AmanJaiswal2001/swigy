@@ -10,12 +10,12 @@ const RestarantCard = (props) => {
         costForTwo,           
     }=ResData.info;
     return (
-        <div className="flex mx-10 py-5  ">
-                <div className='w-[250px]  rounded-lg bg-gray-100'>
+        <div className="flex mx-10 py-5">
+                <div className=' h-full w-96 md:w-[250px]  sm:h-full md:h-full  sm:w-72 rounded-lg bg-gray-100'>
 
         
         
-            <img className=" rounded-xl h-1/2 w-full p-3 " src=
+            <img className=" rounded-xl h-1/2 w-full sm:h-52 md:h-64 p-3 " src=
             {"https:media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId }/>
           
             <h1 className="p-3 -mt-3 font-bold ">{name}</h1>
